@@ -1,0 +1,43 @@
+services:
+  ros-env-summerschool:
+    container_name: ros-env-summerschool
+    build:
+      context: ./build
+      args:
+        # TARGET: gpu # cpu or gpu
+        # find user id and group ids with:
+        # id -u
+        # id -g
+        UID: 1000
+        GID: 1000
+
+    # make container use same network interfaces, IP addresses, and ports as the host system
+    network_mode: host
+    # enable gazebo to use gpus, comment out this line if no nvidia gpus
+    # runtime: nvidia 
+    # use interactive terminal sessions with the container
+    tty: true
+    # grants the container elevated privileges
+    privileged: true
+    # make container to stay running indefinitely
+    command: tail -f /dev/null
+    # user: "docker"
+
+    environment:
+      - "DISPLAY=$DISPLAY"
+      - TERM=xterm-256color
+      - DEBUG_COLORS=true
+      - COLORTERM=truecolor
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      # uncomment this line to connect to other ros master
+      # - ROS_MASTER_URI=http://<ip_adress or hostname>:<port> 
+      # - ROS_MASTER_URI=http://phoenix:11311 #rotterdam
+    volumes: 
+      - ./catkin_ws:/home/docker/catkin_ws
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      # - /dev/ttyUSB0:/dev/ttyUSB0
+      # - /dev/ttyUSB1:/dev/ttyUSB1
+      # use this line if you want to run the robot on a remote machine
+      # - $HOME/.Xauthority:/home/docker/.Xauthority:rw
+      # - /etc/timezone:/etc/timezone:ro
