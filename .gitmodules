@@ -1,0 +1,6 @@
+[submodule "catkin_ws/src/simulation_setup"]
+	path = catkin_ws/src/simulation_setup
+	url = git@github.com:UR9A-Summerschool2024/simulation_setup.git
+[submodule "catkin_ws/src/rl-stabilize"]
+	path = catkin_ws/src/rl-stabilize
+	url = git@github.com:UR9A-Summerschool2024/rl-stabilize.git
