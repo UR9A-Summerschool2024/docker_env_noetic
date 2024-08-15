@@ -4,3 +4,6 @@
 [submodule "catkin_ws/src/rl-stabilize"]
 	path = catkin_ws/src/rl-stabilize
 	url = git@github.com:UR9A-Summerschool2024/rl-stabilize.git
+[submodule "catkin_ws/src/universal_robot"]
+	path = catkin_ws/src/universal_robot
+	url = git@github.com:UR9A-Summerschool2024/universal_robot.git
