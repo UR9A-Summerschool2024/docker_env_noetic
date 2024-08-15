@@ -1,0 +1,4 @@
+catkin_ws/*
+!catkin_ws/src/
+!catkin_ws/.vscode
+!catkin_ws/src/.vscode

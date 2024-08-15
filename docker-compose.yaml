@@ -4,7 +4,7 @@ services:
     build:
       context: ./build
       args:
-        # TARGET: gpu # cpu or gpu
+        TARGET: gpu # cpu or gpu
         # find user id and group ids with:
         # id -u
         # id -g
