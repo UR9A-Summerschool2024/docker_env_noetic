@@ -7,3 +7,6 @@
 [submodule "catkin_ws/src/universal_robot"]
 	path = catkin_ws/src/universal_robot
 	url = git@github.com:UR9A-Summerschool2024/universal_robot.git
+[submodule "catkin_ws/src/Cartesian-Impedance-Controller"]
+	path = catkin_ws/src/Cartesian-Impedance-Controller
+	url = git@github.com:UR9A-Summerschool2024/Cartesian-Impedance-Controller.git
